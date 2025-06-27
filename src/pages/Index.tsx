@@ -28,6 +28,16 @@ import { ProductivityTimer } from "@/components/tools/ProductivityTimer";
 import { LoFiNicknameGenerator } from "@/components/tools/LoFiNicknameGenerator";
 import { PhilosophicalQuoteGenerator } from "@/components/tools/PhilosophicalQuoteGenerator";
 import { LifeProgressBar } from "@/components/tools/LifeProgressBar";
+import { MultitaskerIQChecker } from "@/components/tools/MultitaskerIQChecker";
+import { ReverseTypingTool } from "@/components/tools/ReverseTypingTool";
+import { RandomProductivityKiller } from "@/components/tools/RandomProductivityKiller";
+import { ShowerThoughtMachine } from "@/components/tools/ShowerThoughtMachine";
+import { DramaTitleGenerator } from "@/components/tools/DramaTitleGenerator";
+import { OverengineeredCoinFlip } from "@/components/tools/OverengineeredCoinFlip";
+import { PersonaBuilder } from "@/components/tools/PersonaBuilder";
+import { SaveMyLastBraincell } from "@/components/tools/SaveMyLastBraincell";
+import { NumberPersonalityTest } from "@/components/tools/NumberPersonalityTest";
+import { CodeRageMeter } from "@/components/tools/CodeRageMeter";
 
 const tools = [
   {
@@ -229,6 +239,86 @@ const tools = [
     category: 'Utility',
     component: LifeProgressBar,
     gradient: 'from-green-500 to-blue-600'
+  },
+  {
+    id: 'multitasker-iq',
+    title: 'Multitasker IQ Checker',
+    description: 'Test your ability to type two things at once',
+    category: 'Fun',
+    component: MultitaskerIQChecker,
+    gradient: 'from-purple-500 to-blue-600'
+  },
+  {
+    id: 'reverse-typing',
+    title: 'Reverse Typing Tool',
+    description: 'Watch your text reverse in real-time',
+    category: 'Text',
+    component: ReverseTypingTool,
+    gradient: 'from-green-500 to-emerald-600'
+  },
+  {
+    id: 'productivity-killer',
+    title: 'Random Productivity Killer',
+    description: 'Generate perfect excuses to stop working',
+    category: 'Fun',
+    component: RandomProductivityKiller,
+    gradient: 'from-red-500 to-pink-600'
+  },
+  {
+    id: 'shower-thought',
+    title: 'Shower Thought Machine',
+    description: 'Generate mind-bending shower thoughts',
+    category: 'Fun',
+    component: ShowerThoughtMachine,
+    gradient: 'from-blue-500 to-cyan-600'
+  },
+  {
+    id: 'drama-title',
+    title: 'Drama Title Generator',
+    description: 'Turn anything into an epic movie title',
+    category: 'Fun',
+    component: DramaTitleGenerator,
+    gradient: 'from-purple-500 to-red-600'
+  },
+  {
+    id: 'coin-flip',
+    title: 'Overengineered Coin Flip',
+    description: 'Coin flipping with quantum algorithms',
+    category: 'Fun',
+    component: OverengineeredCoinFlip,
+    gradient: 'from-yellow-500 to-orange-600'
+  },
+  {
+    id: 'persona-builder',
+    title: 'Persona Builder',
+    description: 'Create your unique persona from preferences',
+    category: 'Fun',
+    component: PersonaBuilder,
+    gradient: 'from-indigo-500 to-purple-600'
+  },
+  {
+    id: 'save-braincell',
+    title: 'Save My Last Braincell',
+    description: 'Preserve that one important thought',
+    category: 'Utility',
+    component: SaveMyLastBraincell,
+    gradient: 'from-pink-500 to-rose-600'
+  },
+  {
+    id: 'number-personality',
+    title: 'Number Personality Test',
+    description: 'Discover what kind of person your number is',
+    category: 'Fun',
+    component: NumberPersonalityTest,
+    gradient: 'from-cyan-500 to-blue-600'
+  },
+  {
+    id: 'code-rage',
+    title: 'Code Rage Meter',
+    description: 'Rate how angry bugs would make developers',
+    category: 'Dev',
+    component: CodeRageMeter,
+    gradient: 'from-red-500 to-orange-600'
   }
 ];
 
