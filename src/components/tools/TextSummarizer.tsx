@@ -25,11 +25,24 @@ export const TextSummarizer = () => {
 
     setIsLoading(true);
     
-    // Simulate AI summarization (replace with actual API call)
+    // Improved summarization logic
     setTimeout(() => {
       const sentences = input.split(/[.!?]+/).filter(s => s.trim().length > 0);
-      const summary = sentences.slice(0, Math.max(1, Math.floor(sentences.length / 3))).join('. ') + '.';
-      setOutput(summary);
+      
+      if (sentences.length <= 2) {
+        setOutput(input.trim());
+      } else {
+        // Take first sentence, a middle sentence, and last sentence
+        const firstSentence = sentences[0].trim();
+        const middleIndex = Math.floor(sentences.length / 2);
+        const middleSentence = sentences[middleIndex].trim();
+        const lastSentence = sentences[sentences.length - 1].trim();
+        
+        // Create a more meaningful summary
+        const summary = `${firstSentence}. ${middleSentence}. ${lastSentence}.`;
+        setOutput(summary);
+      }
+      
       setIsLoading(false);
       
       toast({

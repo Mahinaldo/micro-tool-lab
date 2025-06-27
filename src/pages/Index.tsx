@@ -23,6 +23,11 @@ import { MockingTextGenerator } from "@/components/tools/MockingTextGenerator";
 import { MoodEmojiGenerator } from "@/components/tools/MoodEmojiGenerator";
 import { TypingSpeedMeter } from "@/components/tools/TypingSpeedMeter";
 import { WhatIfGenerator } from "@/components/tools/WhatIfGenerator";
+import { VibeChecker } from "@/components/tools/VibeChecker";
+import { ProductivityTimer } from "@/components/tools/ProductivityTimer";
+import { LoFiNicknameGenerator } from "@/components/tools/LoFiNicknameGenerator";
+import { PhilosophicalQuoteGenerator } from "@/components/tools/PhilosophicalQuoteGenerator";
+import { LifeProgressBar } from "@/components/tools/LifeProgressBar";
 
 const tools = [
   {
@@ -184,6 +189,46 @@ const tools = [
     category: 'Fun',
     component: WhatIfGenerator,
     gradient: 'from-indigo-500 to-purple-600'
+  },
+  {
+    id: 'vibe-checker',
+    title: 'Vibe Checker',
+    description: 'Rate the energy of anything you type',
+    category: 'Fun',
+    component: VibeChecker,
+    gradient: 'from-purple-500 to-pink-600'
+  },
+  {
+    id: 'productivity-timer',
+    title: 'Productivity Timer Roulette',
+    description: 'Random focus sessions to beat choice paralysis',
+    category: 'Utility',
+    component: ProductivityTimer,
+    gradient: 'from-orange-500 to-red-600'
+  },
+  {
+    id: 'lofi-nickname',
+    title: 'Lo-Fi Nickname Generator',
+    description: 'Transform your name into chill lo-fi vibes',
+    category: 'Fun',
+    component: LoFiNicknameGenerator,
+    gradient: 'from-indigo-500 to-purple-600'
+  },
+  {
+    id: 'philosophical-quotes',
+    title: 'Philosophical Quote Generator',
+    description: 'Deep thoughts, but funny and relatable',
+    category: 'Fun',
+    component: PhilosophicalQuoteGenerator,
+    gradient: 'from-gray-600 to-gray-800'
+  },
+  {
+    id: 'life-progress',
+    title: 'Life Progress Bar',
+    description: 'Visualize how far you\'ve come in life',
+    category: 'Utility',
+    component: LifeProgressBar,
+    gradient: 'from-green-500 to-blue-600'
   }
 ];
 
