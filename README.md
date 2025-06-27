@@ -1,73 +1,73 @@
-# Welcome to your Lovable project
+# Micro-Tool Lab
 
-## Project info
+Welcome to the Micro-Tool Lab! This project is a collection of small, useful web-based tools designed to help with various tasks. It's built with modern web technologies to provide a fast and responsive user experience.
 
-**URL**: https://lovable.dev/projects/484c118e-0a18-4700-b513-f3281d9673e5
+## Credits
 
-## How can I edit this code?
+This project was developed by **Mahinur Rahman (Mahin)**.
 
-There are several ways of editing your application.
+## Features
 
-**Use Lovable**
+- **Fast Loading:** Optimized for quick loading times.
+- **Interactive Tools:** A growing collection of interactive tools.
+- **Modern UI:** Clean and intuitive user interface.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/484c118e-0a18-4700-b513-f3281d9673e5) and start prompting.
+## Technologies Used
 
-Changes made via Lovable will be committed automatically to this repo.
+This project is built using:
 
-**Use your preferred IDE**
+- **React:** A JavaScript library for building user interfaces.
+- **Vite:** A fast build tool for modern web projects.
+- **TypeScript:** A typed superset of JavaScript that compiles to plain JavaScript.
+- **Tailwind CSS:** A utility-first CSS framework for rapidly building custom designs.
+- **Bun:** A fast all-in-one JavaScript runtime.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## How to Set Up and Run Locally
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+To get this project up and running on your local machine, follow these steps:
 
-Follow these steps:
+1.  **Clone the repository:**
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+    ```bash
+    git clone <repository-url>
+    cd micro-tool-lab-1
+    ```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+2.  **Install dependencies:**
 
-# Step 3: Install the necessary dependencies.
-npm i
+    This project uses Bun as its package manager. Make sure you have Bun installed. If not, you can install it by following the instructions on the [Bun website](https://bun.sh/docs/installation).
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+    ```bash
+    bun install
+    ```
 
-**Edit a file directly in GitHub**
+3.  **Run the development server:**
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+    ```bash
+    bun run dev
+    ```
 
-**Use GitHub Codespaces**
+    The application will be accessible at `http://localhost:5173` (or another port if 5173 is in use).
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+4.  **Build for production:**
 
-## What technologies are used for this project?
+    ```bash
+    bun run build
+    ```
 
-This project is built with:
+    This will create a production-ready build in the `dist` directory.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Want a Similar Website or Custom Development?
 
-## How can I deploy this project?
+Are you looking to create a similar interactive web application, a custom tool, or need expert front-end development services? I specialize in building high-quality, performant, and user-friendly web solutions.
 
-Simply open [Lovable](https://lovable.dev/projects/484c118e-0a18-4700-b513-f3281d9673e5) and click on Share -> Publish.
+Feel free to reach out to me for your next project!
 
-## Can I connect a custom domain to my Lovable project?
+- **Fiverr:** [Your Fiverr Profile Link Here]
+- **Upwork:** [Your Upwork Profile Link Here]
 
-Yes, you can!
+## Copyright and Licensing
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+© 2023 Mahinur Rahman (Mahin). All rights reserved.
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+This project is provided for educational and demonstration purposes. Unauthorized copying, distribution, or modification of this code without explicit permission from Mahinur Rahman is strictly prohibited. If you wish to use parts of this project or require a similar solution, please contact me through my Fiverr or Upwork profiles.
