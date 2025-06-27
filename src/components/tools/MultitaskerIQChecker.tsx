@@ -14,6 +14,14 @@ export const MultitaskerIQChecker = () => {
   const [isActive, setIsActive] = useState(false);
   const { toast } = useToast();
 
+  const resetTest = () => {
+    setInput1('');
+    setInput2('');
+    setStartTime(null);
+    setResult(null);
+    setIsActive(false);
+  };
+
   const startTest = () => {
     setInput1('');
     setInput2('');
@@ -134,14 +142,23 @@ export const MultitaskerIQChecker = () => {
                   </div>
                 </div>
                 
-                <Button 
-                  onClick={checkMultitasking}
-                  disabled={!input1.trim() || !input2.trim()}
-                  className="w-full"
-                >
-                  <Timer className="w-4 h-4 mr-2" />
-                  Check My Multitasking IQ
-                </Button>
+                <div className="flex space-x-2">
+                  <Button 
+                    onClick={checkMultitasking}
+                    disabled={!input1.trim() || !input2.trim()}
+                    className="flex-1"
+                  >
+                    <Timer className="w-4 h-4 mr-2" />
+                    Check My Multitasking IQ
+                  </Button>
+                  <Button 
+                    onClick={resetTest}
+                    variant="outline"
+                    className="w-auto"
+                  >
+                    Reset
+                  </Button>
+                </div>
               </div>
             )}
           </div>
@@ -156,15 +173,25 @@ export const MultitaskerIQChecker = () => {
                 <label className="text-sm font-medium text-gray-700">
                   Your Multitasking IQ
                 </label>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={copyResult}
-                  className="flex items-center gap-2"
-                >
-                  <Copy className="w-4 h-4" />
-                  Copy
-                </Button>
+                <div className="flex space-x-2">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={copyResult}
+                    className="flex items-center gap-2"
+                  >
+                    <Copy className="w-4 h-4" />
+                    Copy
+                  </Button>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={resetTest}
+                    className="w-auto"
+                  >
+                    Reset
+                  </Button>
+                </div>
               </div>
               <div className="text-center p-8 bg-gradient-to-r from-purple-50 to-blue-50 rounded-lg border border-purple-200">
                 <div className="text-4xl font-bold text-gray-900 mb-2">

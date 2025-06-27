@@ -474,7 +474,7 @@ const Index = () => {
           <div className="flex items-center justify-center gap-2 text-gray-600 mb-4">
             <span>Made with</span>
             <Heart className="w-4 h-4 text-red-500 fill-current" />
-            <span>for productivity</span>
+            <span>by Mahin</span>
           </div>
           <div className="flex items-center justify-center gap-4">
             <Button variant="ghost" size="sm" className="text-gray-500 hover:text-gray-700">
