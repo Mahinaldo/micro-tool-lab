@@ -63,8 +63,8 @@ Are you looking to create a similar interactive web application, a custom tool, 
 
 Feel free to reach out to me for your next project!
 
-- **Fiverr:** [Your Fiverr Profile Link Here]
-- **Upwork:** [Your Upwork Profile Link Here]
+ **LinkedIn** - [Mahinur Rahman](https://linkedin.com/in/mahinur-rahman-a986612b7/)
+ 
 
 ## Copyright and Licensing
 
