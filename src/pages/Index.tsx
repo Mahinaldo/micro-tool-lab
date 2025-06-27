@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -12,6 +11,18 @@ import { JsonFormatter } from "@/components/tools/JsonFormatter";
 import { ExcuseGenerator } from "@/components/tools/ExcuseGenerator";
 import { RandomNumber } from "@/components/tools/RandomNumber";
 import { FoodPicker } from "@/components/tools/FoodPicker";
+import { DiceRoller } from "@/components/tools/DiceRoller";
+import { RandomPicker } from "@/components/tools/RandomPicker";
+import { DecisionMaker } from "@/components/tools/DecisionMaker";
+import { ColorMoodFinder } from "@/components/tools/ColorMoodFinder";
+import { SecretMessageTool } from "@/components/tools/SecretMessageTool";
+import { DaysSinceTool } from "@/components/tools/DaysSinceTool";
+import { LuckyNumberGenerator } from "@/components/tools/LuckyNumberGenerator";
+import { FontPersonalityMatcher } from "@/components/tools/FontPersonalityMatcher";
+import { MockingTextGenerator } from "@/components/tools/MockingTextGenerator";
+import { MoodEmojiGenerator } from "@/components/tools/MoodEmojiGenerator";
+import { TypingSpeedMeter } from "@/components/tools/TypingSpeedMeter";
+import { WhatIfGenerator } from "@/components/tools/WhatIfGenerator";
 
 const tools = [
   {
@@ -77,6 +88,102 @@ const tools = [
     category: 'Fun',
     component: FoodPicker,
     gradient: 'from-rose-500 to-pink-600'
+  },
+  {
+    id: 'dice-roller',
+    title: 'Dice Roller',
+    description: 'Roll dice with animated results',
+    category: 'Fun',
+    component: DiceRoller,
+    gradient: 'from-amber-500 to-orange-600'
+  },
+  {
+    id: 'random-picker',
+    title: 'Random Picker',
+    description: 'Pick randomly from your list',
+    category: 'Fun',
+    component: RandomPicker,
+    gradient: 'from-emerald-500 to-green-600'
+  },
+  {
+    id: 'decision-maker',
+    title: 'Decision Maker',
+    description: 'Get witty answers to your questions',
+    category: 'Fun',
+    component: DecisionMaker,
+    gradient: 'from-violet-500 to-purple-600'
+  },
+  {
+    id: 'color-mood',
+    title: 'Color Mood Finder',
+    description: 'Find colors that match your vibe',
+    category: 'Fun',
+    component: ColorMoodFinder,
+    gradient: 'from-pink-500 to-rose-600'
+  },
+  {
+    id: 'secret-message',
+    title: 'Secret Message Tool',
+    description: 'Encode messages in fun ways',
+    category: 'Fun',
+    component: SecretMessageTool,
+    gradient: 'from-slate-500 to-gray-600'
+  },
+  {
+    id: 'days-since',
+    title: 'Days Since Counter',
+    description: 'Count days since any date',
+    category: 'Utility',
+    component: DaysSinceTool,
+    gradient: 'from-sky-500 to-blue-600'
+  },
+  {
+    id: 'lucky-number',
+    title: 'Lucky Number Generator',
+    description: 'Generate your personal lucky number',
+    category: 'Fun',
+    component: LuckyNumberGenerator,
+    gradient: 'from-yellow-500 to-amber-600'
+  },
+  {
+    id: 'font-personality',
+    title: 'Font Personality Matcher',
+    description: 'Discover your font personality',
+    category: 'Fun',
+    component: FontPersonalityMatcher,
+    gradient: 'from-teal-500 to-cyan-600'
+  },
+  {
+    id: 'mocking-text',
+    title: 'Mocking Text Generator',
+    description: 'cReAtE mOcKiNg TeXt LiKe ThIs',
+    category: 'Text',
+    component: MockingTextGenerator,
+    gradient: 'from-red-500 to-pink-600'
+  },
+  {
+    id: 'mood-emoji',
+    title: 'Mood Emoji Generator',
+    description: 'Find the perfect emoji for your mood',
+    category: 'Fun',
+    component: MoodEmojiGenerator,
+    gradient: 'from-orange-500 to-yellow-600'
+  },
+  {
+    id: 'typing-speed',
+    title: 'Typing Speed Meter',
+    description: 'Test your typing speed with flames',
+    category: 'Utility',
+    component: TypingSpeedMeter,
+    gradient: 'from-red-500 to-orange-600'
+  },
+  {
+    id: 'what-if-generator',
+    title: 'What If...? Generator',
+    description: 'Generate mind-bending hypotheticals',
+    category: 'Fun',
+    component: WhatIfGenerator,
+    gradient: 'from-indigo-500 to-purple-600'
   }
 ];
 
