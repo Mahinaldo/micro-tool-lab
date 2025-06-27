@@ -5,6 +5,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React, { Suspense, lazy } from 'react';
 import LoadingScreen from './components/LoadingScreen';
+import LogoRefresh from './components/ui/LogoRefresh';
+import SocialFooter from './components/SocialFooter';
 
 const Index = lazy(() => import('./pages/Index'));
 import NotFound from "./pages/NotFound";
@@ -17,6 +19,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <LogoRefresh />
         <Routes>
           <Route
             path="/"
@@ -30,6 +33,7 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
+      <SocialFooter />
     </TooltipProvider>
   </QueryClientProvider>
 );
