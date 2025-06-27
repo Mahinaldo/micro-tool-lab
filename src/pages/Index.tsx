@@ -204,20 +204,6 @@ const tools = [
     gradient: 'from-purple-500 to-indigo-600'
   },
   {
-    id: 'coming-soon',
-    title: 'More Coming Soon!',
-    description: 'Stay tuned for exciting new tools.',
-    category: 'Future',
-    component: () => (
-      <div className="flex flex-col items-center justify-center h-full p-4 text-center">
-        <h3 className="text-2xl font-bold text-gray-700 dark:text-gray-300 mb-2">More Coming Soon!</h3>
-        <p className="text-gray-500 dark:text-gray-400">We're constantly working on new and exciting tools to enhance your experience. Check back soon!</p>
-      </div>
-    ),
-    gradient: 'from-gray-400 to-gray-600'
-  },
-
-  {
     id: 'vibe-checker',
     title: 'Vibe Checker',
     description: 'Rate the energy of anything you type',
