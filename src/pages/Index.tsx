@@ -38,6 +38,9 @@ import { PersonaBuilder } from "@/components/tools/PersonaBuilder";
 import { SaveMyLastBraincell } from "@/components/tools/SaveMyLastBraincell";
 import { NumberPersonalityTest } from "@/components/tools/NumberPersonalityTest";
 import { CodeRageMeter } from "@/components/tools/CodeRageMeter";
+import { EasterEggHandler } from "@/components/EasterEggHandler";
+import { ToolSuggestionBox } from "@/components/ToolSuggestionBox";
+import { useToolOfTheDay } from "@/hooks/useToolOfTheDay";
 
 const tools = [
   {
@@ -331,12 +334,14 @@ const Index = () => {
     ? tools 
     : tools.filter(tool => tool.category === selectedCategory);
 
+  const toolOfTheDay = useToolOfTheDay(tools);
   const currentTool = tools.find(tool => tool.id === selectedTool);
 
   if (selectedTool && currentTool) {
     const ToolComponent = currentTool.component;
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+        <EasterEggHandler />
         <div className="container mx-auto px-4 py-8">
           <div className="flex items-center gap-4 mb-8">
             <Button
@@ -367,6 +372,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+      <EasterEggHandler />
       {/* Header */}
       <div className="container mx-auto px-4 py-8">
         <div className="text-center mb-12">
@@ -377,6 +383,25 @@ const Index = () => {
             A collection of tiny, powerful tools. Each one does exactly what it says, 
             with a clean one-line interface.
           </p>
+          
+          {/* Tool of the Day */}
+          <div className="mb-8">
+            <Card className="max-w-md mx-auto bg-gradient-to-r from-yellow-100 to-amber-100 border-2 border-yellow-300 shadow-lg animate-pulse">
+              <CardContent className="p-4">
+                <div className="flex items-center justify-center gap-2 mb-2">
+                  <div className="text-2xl">⭐</div>
+                  <h3 className="font-bold text-yellow-800">Tool of the Day</h3>
+                  <div className="text-2xl">⭐</div>
+                </div>
+                <Button
+                  onClick={() => setSelectedTool(toolOfTheDay.id)}
+                  className="bg-gradient-to-r from-yellow-500 to-amber-600 hover:from-yellow-600 hover:to-amber-700 text-white font-semibold"
+                >
+                  🎯 Try {toolOfTheDay.title}
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
           
           {/* Category Filter */}
           <div className="flex flex-wrap justify-center gap-2 mb-8">
@@ -394,11 +419,13 @@ const Index = () => {
         </div>
 
         {/* Tools Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto mb-12">
           {filteredTools.map((tool) => (
             <Card
               key={tool.id}
-              className="group cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-xl bg-white/70 backdrop-blur-sm border-0 shadow-lg"
+              className={`group cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-xl bg-white/70 backdrop-blur-sm border-0 shadow-lg ${
+                tool.id === toolOfTheDay.id ? 'ring-2 ring-yellow-400 shadow-yellow-200' : ''
+              }`}
               onClick={() => setSelectedTool(tool.id)}
             >
               <CardHeader className="pb-3">
@@ -406,9 +433,14 @@ const Index = () => {
                   <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${tool.gradient} flex items-center justify-center text-white font-bold text-lg shadow-md`}>
                     {tool.title.charAt(0)}
                   </div>
-                  <Badge variant="secondary" className="text-xs">
-                    {tool.category}
-                  </Badge>
+                  <div className="flex items-center gap-2">
+                    {tool.id === toolOfTheDay.id && (
+                      <div className="text-lg animate-bounce">⭐</div>
+                    )}
+                    <Badge variant="secondary" className="text-xs">
+                      {tool.category}
+                    </Badge>
+                  </div>
                 </div>
                 <CardTitle className="text-lg group-hover:text-blue-600 transition-colors">
                   {tool.title}
@@ -421,6 +453,20 @@ const Index = () => {
               </CardContent>
             </Card>
           ))}
+        </div>
+
+        {/* Tool Suggestion Box */}
+        <div className="max-w-md mx-auto mb-12">
+          <ToolSuggestionBox />
+        </div>
+
+        {/* Easter Egg Hint */}
+        <div className="text-center mb-8">
+          <p className="text-sm text-gray-500 italic">
+            💡 Psst... try typing some keywords while browsing! 
+            <br />
+            (rickroll, coffee, debug, konami)
+          </p>
         </div>
 
         {/* Footer */}
