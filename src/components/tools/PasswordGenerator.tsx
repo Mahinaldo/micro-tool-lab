@@ -110,7 +110,7 @@ export const PasswordGenerator = () => {
                 <Checkbox
                   id="uppercase"
                   checked={includeUppercase}
-                  onCheckedChange={setIncludeUppercase}
+                  onCheckedChange={(checked) => setIncludeUppercase(checked === true)}
                 />
                 <label htmlFor="uppercase" className="text-sm text-gray-700">
                   Uppercase (A-Z)
@@ -121,7 +121,7 @@ export const PasswordGenerator = () => {
                 <Checkbox
                   id="lowercase"
                   checked={includeLowercase}
-                  onCheckedChange={setIncludeLowercase}
+                  onCheckedChange={(checked) => setIncludeLowercase(checked === true)}
                 />
                 <label htmlFor="lowercase" className="text-sm text-gray-700">
                   Lowercase (a-z)
@@ -132,7 +132,7 @@ export const PasswordGenerator = () => {
                 <Checkbox
                   id="numbers"
                   checked={includeNumbers}
-                  onCheckedChange={setIncludeNumbers}
+                  onCheckedChange={(checked) => setIncludeNumbers(checked === true)}
                 />
                 <label htmlFor="numbers" className="text-sm text-gray-700">
                   Numbers (0-9)
@@ -143,7 +143,7 @@ export const PasswordGenerator = () => {
                 <Checkbox
                   id="symbols"
                   checked={includeSymbols}
-                  onCheckedChange={setIncludeSymbols}
+                  onCheckedChange={(checked) => setIncludeSymbols(checked === true)}
                 />
                 <label htmlFor="symbols" className="text-sm text-gray-700">
                   Symbols (!@#$...)

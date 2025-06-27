@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
-import { FileText, Hash, Paragraph, Clock } from "lucide-react";
+import { FileText, Hash, Clock } from "lucide-react";
 
 export const WordCounter = () => {
   const [text, setText] = useState('');
@@ -94,7 +94,7 @@ export const WordCounter = () => {
         <Card className="bg-white/80 backdrop-blur-sm">
           <CardContent className="p-4 text-center">
             <div className="flex items-center justify-center mb-2">
-              <Paragraph className="w-5 h-5 text-orange-500" />
+              <FileText className="w-5 h-5 text-orange-500" />
             </div>
             <div className="text-2xl font-bold text-gray-900">{stats.paragraphs}</div>
             <div className="text-xs text-gray-600">Paragraphs</div>
