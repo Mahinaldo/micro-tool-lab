@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -340,7 +340,24 @@ const tools = [
 ];
 
 const Index = () => {
-  const [selectedTool, setSelectedTool] = useState<string | null>(null);
+  const [selectedToolId, setSelectedToolId] = useState<string | null>(() => {
+    return localStorage.getItem('selectedToolId') || null;
+  });
+  const [searchQuery, setSearchQuery] = useState(() => {
+    return localStorage.getItem('searchQuery') || '';
+  });
+
+  useEffect(() => {
+    if (selectedToolId) {
+      localStorage.setItem('selectedToolId', selectedToolId);
+    } else {
+      localStorage.removeItem('selectedToolId');
+    }
+  }, [selectedToolId]);
+
+  useEffect(() => {
+    localStorage.setItem('searchQuery', searchQuery);
+  }, [searchQuery]);
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
 
   const categories = ['All', ...new Set(tools.map(tool => tool.category))];
@@ -349,9 +366,9 @@ const Index = () => {
     : tools.filter(tool => tool.category === selectedCategory);
 
   const toolOfTheDay = useToolOfTheDay(tools);
-  const currentTool = tools.find(tool => tool.id === selectedTool);
+  const currentTool = tools.find(tool => tool.id === selectedToolId);
 
-  if (selectedTool && currentTool) {
+  if (selectedToolId && currentTool) {
     const ToolComponent = currentTool.component;
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
@@ -360,7 +377,7 @@ const Index = () => {
           <div className="flex items-center gap-4 mb-8">
             <Button
               variant="ghost"
-              onClick={() => setSelectedTool(null)}
+              onClick={() => setSelectedToolId(null)}
               className="flex items-center gap-2 hover:bg-white/50"
             >
               <ArrowLeft className="w-4 h-4" />
@@ -390,7 +407,7 @@ const Index = () => {
       {/* Header */}
       <div className="container mx-auto px-4 py-8">
         <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold text-gray-900 mb-4">
+          <h1 className="text-5xl font-bold text-gray-900 mb-4 mt-12">
             One Line, One Tool
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
@@ -408,7 +425,7 @@ const Index = () => {
                   <div className="text-2xl">⭐</div>
                 </div>
                 <Button
-                  onClick={() => setSelectedTool(toolOfTheDay.id)}
+                  onClick={() => setSelectedToolId(toolOfTheDay.id)}
                   className="bg-gradient-to-r from-yellow-500 to-amber-600 hover:from-yellow-600 hover:to-amber-700 text-white font-semibold"
                 >
                   🎯 Try {toolOfTheDay.title}
@@ -433,14 +450,14 @@ const Index = () => {
         </div>
 
         {/* Tools Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto mb-12">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto mb-12">
           {filteredTools.map((tool) => (
             <Card
               key={tool.id}
               className={`group cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-xl bg-white/70 backdrop-blur-sm border-0 shadow-lg ${
                 tool.id === toolOfTheDay.id ? 'ring-2 ring-yellow-400 shadow-yellow-200' : ''
               }`}
-              onClick={() => setSelectedTool(tool.id)}
+              onClick={() => setSelectedToolId(tool.id)}
             >
               <CardHeader className="pb-3">
                 <div className="flex items-center justify-between mb-2">
@@ -456,12 +473,12 @@ const Index = () => {
                     </Badge>
                   </div>
                 </div>
-                <CardTitle className="text-lg group-hover:text-blue-600 transition-colors">
+                <CardTitle className="text-base sm:text-lg group-hover:text-blue-600 transition-colors">
                   {tool.title}
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-sm">
+                <CardDescription className="text-xs sm:text-sm text-gray-600">
                   {tool.description}
                 </CardDescription>
               </CardContent>
