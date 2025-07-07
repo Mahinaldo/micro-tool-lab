@@ -358,6 +358,26 @@ const Index = () => {
   useEffect(() => {
     localStorage.setItem('searchQuery', searchQuery);
   }, [searchQuery]);
+
+  useEffect(() => {
+    const mainContent = document.getElementById('main-content');
+    if (mainContent) {
+      const savedScrollY = localStorage.getItem('scrollPosition');
+      if (savedScrollY) {
+        mainContent.scrollTop = parseInt(savedScrollY, 10);
+      }
+
+      const handleScroll = () => {
+        localStorage.setItem('scrollPosition', mainContent.scrollTop.toString());
+      };
+
+      mainContent.addEventListener('scroll', handleScroll);
+
+      return () => {
+        mainContent.removeEventListener('scroll', handleScroll);
+      };
+    }
+  }, []);
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
 
   const categories = ['All', ...new Set(tools.map(tool => tool.category))];
@@ -450,7 +470,7 @@ const Index = () => {
         </div>
 
         {/* Tools Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto mb-12">
+        <div id="main-content" className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto mb-12 overflow-y-auto">
           {filteredTools.map((tool) => (
             <Card
               key={tool.id}
